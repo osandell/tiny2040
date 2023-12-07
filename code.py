@@ -9,20 +9,20 @@ import usb_hid
 kbd = Keyboard(usb_hid.devices)
 
 # Set up the first button
-button1 = digitalio.DigitalInOut(board.GP4)
+button1 = digitalio.DigitalInOut(board.GP7)
 button1.direction = digitalio.Direction.INPUT
 button1.pull = digitalio.Pull.UP
 
 # Set up the second button
-button2 = digitalio.DigitalInOut(board.GP7)  # Use a different pin for the second button
+button2 = digitalio.DigitalInOut(board.GP2)  # Use a different pin for the second button
 button2.direction = digitalio.Direction.INPUT
 button2.pull = digitalio.Pull.UP
 
 # Set up the third button
-button3 = digitalio.DigitalInOut(board.GP2)
+button3 = digitalio.DigitalInOut(board.GP4)
 button3.direction = digitalio.Direction.INPUT
 button3.pull = digitalio.Pull.UP
-
+    
 # Set up the fourth button
 button4 = digitalio.DigitalInOut(board.GP0)
 button4.direction = digitalio.Direction.INPUT
