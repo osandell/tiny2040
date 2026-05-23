@@ -35,37 +35,35 @@ button4_was_pressed = False
 
 while True:
     # Check the first button
-    if not button1.value and not button1_was_pressed:  # If button1 is pressed
-        kbd.press(Keycode.RIGHT_CONTROL)  # Send the right alt key down event
+    if not button1.value and not button1_was_pressed:
+        kbd.press(Keycode.RIGHT_GUI)
         button1_was_pressed = True
-    elif button1.value and button1_was_pressed:  # If button1 is released
-        kbd.release(Keycode.RIGHT_CONTROL)  # Release the right alt key
+    elif button1.value and button1_was_pressed:
+        kbd.release(Keycode.RIGHT_GUI)
         button1_was_pressed = False
 
     # Check the second button
-    if not button2.value and not button2_was_pressed:  # If button2 is pressed
-        kbd.press(
-            Keycode.LEFT_CONTROL
-        )  # Send a different key event, for example left control
+    if not button2.value and not button2_was_pressed:
+        kbd.press(Keycode.LEFT_GUI)
         button2_was_pressed = True
-    elif button2.value and button2_was_pressed:  # If button2 is released
-        kbd.release(Keycode.LEFT_CONTROL)  # Release the left control key
+    elif button2.value and button2_was_pressed:
+        kbd.release(Keycode.LEFT_GUI)
         button2_was_pressed = False
 
-    # Check the third button - send KEYPAD_ONE instead of BACKSPACE
+    # Check the third button
     if not button3.value and not button3_was_pressed:
-        kbd.press(Keycode.KEYPAD_ONE)  # Change to KEYPAD_ONE
+        kbd.press(Keycode.N)
         button3_was_pressed = True
     elif button3.value and button3_was_pressed:
-        kbd.release(Keycode.KEYPAD_ONE)  # Change to KEYPAD_ONE
+        kbd.release(Keycode.N)
         button3_was_pressed = False
 
-    # Check the fourth button - send KEYPAD_ENTER instead of RETURN
+    # Check the fourth button
     if not button4.value and not button4_was_pressed:
-        kbd.press(Keycode.KEYPAD_ENTER)  # Change to KEYPAD_ENTER
+        kbd.press(Keycode.V)
         button4_was_pressed = True
     elif button4.value and button4_was_pressed:
-        kbd.release(Keycode.KEYPAD_ENTER)  # Change to KEYPAD_ENTER
+        kbd.release(Keycode.V)
         button4_was_pressed = False
 
     time.sleep(0.01)  # Debounce delay
